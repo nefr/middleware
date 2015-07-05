@@ -16,10 +16,7 @@ public class ChannelTest extends AbstractTestConfig {
 
     @Test
     public void channelCRUD() {
-//        ChannelMapper mapper = sqlSession.getMapper(ChannelMapper.class);
-        Assert.assertTrue(4 == mapper.findAll().size());
-//        mapper.insertChannel(new ChannelTV(2222, "nnn", "lll", 1001));
-//        Assert.assertTrue(5 == mapper.findAll().size());
+        Assert.assertTrue(4 == mapper.selectAll().size());
         ChannelTV s = mapper.getChannel(2001);
         Assert.assertEquals("ESPN", s.getName());
     }

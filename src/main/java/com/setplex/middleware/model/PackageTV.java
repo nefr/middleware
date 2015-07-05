@@ -1,5 +1,6 @@
 package com.setplex.middleware.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class PackageTV implements Serializable {
     private int packageId;
     private String name;

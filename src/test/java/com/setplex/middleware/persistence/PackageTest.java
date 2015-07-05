@@ -1,7 +1,6 @@
 package com.setplex.middleware.persistence;
 
 import com.setplex.middleware.AbstractTestConfig;
-import com.setplex.middleware.AbstractTestDS;
 import com.setplex.middleware.Util.IdUtil;
 import com.setplex.middleware.model.PackageTV;
 import org.junit.Assert;
@@ -27,7 +26,7 @@ public class PackageTest  extends AbstractTestConfig {
         pk = mapper.getPackage(newPackageId);
         Assert.assertEquals(newPackageName, pk.getName());
 
-        pk = mapper.findAll().get(0);
+        pk = mapper.selectAll().get(0);
         pk.setName(newPackageName);
         mapper.updatePackage(pk);
         Assert.assertEquals(newPackageName, mapper.getPackage(pk.getPackageId()).getName());
@@ -35,4 +34,12 @@ public class PackageTest  extends AbstractTestConfig {
         mapper.deletePackage(pk.getPackageId());
         Assert.assertNull(mapper.getPackage(pk.getPackageId()));
     }
+
+    @Test
+    public void testFullPackage() {
+        PackageTV pk = mapper.getFullPackage(1002);
+        System.out.println(pk);
+        Assert.assertTrue(2 == pk.getChannels().size());
+    }
+
 }

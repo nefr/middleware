@@ -1,7 +1,6 @@
 package com.setplex.middleware.persistence;
 
 import com.setplex.middleware.model.ChannelTV;
-import com.setplex.middleware.model.PackageTV;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -19,7 +18,10 @@ public interface ChannelMapper {
     public ChannelTV getChannel(int channelId);
 
     @Select("SELECT * FROM channel")
-    public List<ChannelTV> findAll();
+    public List<ChannelTV> selectAll();
+
+    @Select("SELECT * FROM channel WHERE packageId = #{packageId}")
+    public List<ChannelTV> getChannelsByPackage(int packageId);
 
     @Insert("INSERT INTO channel(channelId, name, language, packageId) VALUES(#{channelId}, #{name}, #{language}, #{packageId})")
     public void insertChannel(ChannelTV channel);

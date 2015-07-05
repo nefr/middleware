@@ -1,12 +1,13 @@
 package com.setplex.middleware.service;
 
+import com.setplex.middleware.model.ChannelTV;
 import com.setplex.middleware.model.PackageTV;
 import com.setplex.middleware.persistence.ChannelMapper;
 import com.setplex.middleware.persistence.PackageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,7 +21,37 @@ public class TVService {
     @Autowired
     PackageMapper packageMapper;
 
+    @Transactional
+    public PackageTV getPackage(int id) {
+        return packageMapper.getPackage(id);
+    }
+
+    @Transactional
+    public List<PackageTV> getPackages() {
+        return packageMapper.selectAll();
+    }
+
+    @Transactional
+    public List<ChannelTV> getChannelsByPackage(int packageId) {
+        return channelMapper.getChannelsByPackage(packageId);
+    }
+
+    @Transactional
+    public List<ChannelTV> getChannels() {
+        return channelMapper.selectAll();
+    }
+
+    @Transactional
+    public ChannelTV getChannel(int channelId) {
+        return channelMapper.getChannel(channelId);
+    }
+
+    @Transactional
     public List<PackageTV> getPackagesWithChannels() {
-        return Collections.emptyList();
+        List<PackageTV> packages = packageMapper.selectAll();
+        for (PackageTV p : packages) {
+            p.setChannels(channelMapper.getChannelsByPackage(p.getPackageId()));
+        }
+        return packages;
     }
 }
