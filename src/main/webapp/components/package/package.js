@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.package', ['ngRoute'])
+angular.module('myApp.package', ['ngRoute', 'ui.bootstrap'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/package', {
@@ -10,10 +10,12 @@ angular.module('myApp.package', ['ngRoute'])
     }])
 
     .controller('PackageCtrl', ['$scope', '$http', function ($scope, $http) {
-        //$scope.getPackages = function () {
-            $http.get("/demo/packages").success(function (response) {
-                $scope.packages = response;
-            });
-        //};
+        $scope.accordion = {
+            current: null
+        };
+
+        $http.get("cms/packages/").success(function (response) {
+            $scope.packages = response;
+        });
 
     }]);

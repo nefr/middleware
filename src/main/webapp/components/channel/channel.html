@@ -1,2 +1,14 @@
-<p>This is the partial for view 2.</p>
-
+<div class="col-md-10 col-md-offset-1">
+    <p>Channels list.</p>
+    <div ng-hide="channels.length">No channels were found</div>
+    <table class="table table-striped">
+        <tbody>
+        <tr ng-repeat="ch in channels track by ch.channelId">
+            <td class="col-md-2">{{ch.channelId}}</td>
+            <td class="col-md-4">{{ch.name}}</td>
+            <td class="col-md-1">{{ch.language}}</td>
+            <td class="col-md-2">{{ch.packageId}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

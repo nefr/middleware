@@ -21,7 +21,7 @@ public class PackageCtrl {
 
     @RequestMapping(value = "/packages", method = RequestMethod.GET)
     public List<PackageTV> getPackages() {
-        return service.getPackages();
+        return service.getPackagesWithChannels();
     }
 
     @RequestMapping(value = "/packages/{id}", method = RequestMethod.GET)

@@ -4,8 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.package',
-  'myApp.channel',
-  'myApp.version'
+  'myApp.channel'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/package'});
