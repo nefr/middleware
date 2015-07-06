@@ -2,5 +2,5 @@
 
 target/
 .idea
-middleware.iml
+*.iml
 
