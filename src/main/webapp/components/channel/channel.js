@@ -10,9 +10,7 @@ angular.module('myApp.channel', ['ngRoute'])
     }])
 
     .controller('ChannelCtrl', ['$scope', '$http', function ($scope, $http) {
-        $scope.getChannels = function () {
-            $http.get("/demo/packages/channels").success(function (response) {
-                $scope.channels = response;
-            });
-        }
+        $http.get("/cms/packages/channels/").success(function (response) {
+            $scope.channels = response;
+        });
     }]);
