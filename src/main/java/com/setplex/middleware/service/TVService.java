@@ -1,5 +1,6 @@
 package com.setplex.middleware.service;
 
+import com.setplex.middleware.Util.IdUtil;
 import com.setplex.middleware.model.ChannelTV;
 import com.setplex.middleware.model.PackageTV;
 import com.setplex.middleware.persistence.ChannelMapper;
@@ -53,5 +54,11 @@ public class TVService {
             p.setChannels(channelMapper.getChannelsByPackage(p.getPackageId()));
         }
         return packages;
+    }
+
+    @Transactional
+    public void createPackage(PackageTV pk) {
+        pk.setPackageId(IdUtil.nextId());
+        packageMapper.insertPackage(pk);
     }
 }

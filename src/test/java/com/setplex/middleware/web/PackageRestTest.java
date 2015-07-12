@@ -1,11 +1,10 @@
 package com.setplex.middleware.web;
 
-import com.setplex.middleware.AbstractTestConfig;
+import com.setplex.middleware.AbstractTestWeb;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,8 +15,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 /**
  * @author Ruslan Yatsevich
  */
-@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring-web.xml")
-public class PackageRestTest extends AbstractTestConfig {
+public class PackageRestTest extends AbstractTestWeb {
 
     @Ignore
     @Test
@@ -25,7 +23,7 @@ public class PackageRestTest extends AbstractTestConfig {
         RestTemplate restTemplate = new RestTemplate();
         MockRestServiceServer mockServer = MockRestServiceServer.createServer(restTemplate);
 
-        mockServer.expect(requestTo("http://localhost:8080/cms/packages/1001"))
+        mockServer.expect(requestTo("/packages/1001"))
                 .andExpect(method(HttpMethod.GET))
                 .andExpect(jsonPath("$.packageId", is(1001)))
                 .andRespond(withSuccess("{ \"packageId\" : \"1001\", \"name\" : \"ESPN\"}", MediaType.APPLICATION_JSON));
