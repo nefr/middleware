@@ -3,9 +3,10 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
+  'myApp.authentication',
   'myApp.package',
   'myApp.channel'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/package'});
+  $routeProvider.otherwise({redirectTo: '/login'});
 }]);
