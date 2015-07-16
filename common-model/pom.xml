@@ -10,9 +10,8 @@
         <version>0.0.2</version>
     </parent>
 
-    <artifactId>mw-model</artifactId>
+    <artifactId>mw-common-model</artifactId>
     <packaging>jar</packaging>
-    <name>Domain Model</name>
 
     <dependencies>
         <dependency>

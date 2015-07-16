@@ -15,9 +15,9 @@
     </properties>
 
     <modules>
-        <module>Domain</module>
-        <module>Persist</module>
-        <module>Web</module>
+        <module>common-model</module>
+        <module>persistence</module>
+        <module>web</module>
     </modules>
 
     <dependencyManagement>

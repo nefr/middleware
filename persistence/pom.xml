@@ -12,12 +12,11 @@
 
     <artifactId>mw-persistence</artifactId>
     <packaging>jar</packaging>
-    <name>Persistence</name>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>mw-model</artifactId>
+            <artifactId>mw-common-model</artifactId>
             <version>${project.version}</version>
         </dependency>
 

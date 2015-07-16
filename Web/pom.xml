@@ -10,14 +10,13 @@
         <version>0.0.2</version>
     </parent>
 
-    <artifactId>cms-admin</artifactId>
+    <artifactId>mw-web</artifactId>
     <packaging>war</packaging>
-    <name>Web App</name>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>mw-model</artifactId>
+            <artifactId>mw-common-model</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
