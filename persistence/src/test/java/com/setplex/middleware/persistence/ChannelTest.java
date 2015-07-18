@@ -1,7 +1,7 @@
 package com.setplex.middleware.persistence;
 
 import com.setplex.middleware.AbstractTestConfig;
-import com.setplex.middleware.Util.IdUtil;
+import com.setplex.middleware.util.IdUtil;
 import com.setplex.middleware.model.ChannelDTO;
 import org.junit.Assert;
 import org.junit.Test;

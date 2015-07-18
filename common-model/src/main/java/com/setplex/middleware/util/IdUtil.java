@@ -1,4 +1,4 @@
-package com.setplex.middleware.Util;
+package com.setplex.middleware.util;
 
 import java.util.concurrent.ThreadLocalRandom;
 

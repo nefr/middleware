@@ -1,6 +1,6 @@
 package com.setplex.middleware.service;
 
-import com.setplex.middleware.Util.IdUtil;
+import com.setplex.middleware.util.IdUtil;
 import com.setplex.middleware.model.ChannelDTO;
 import com.setplex.middleware.model.PackageDTO;
 import com.setplex.middleware.persistence.ChannelMapper;
