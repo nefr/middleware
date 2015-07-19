@@ -16,11 +16,8 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {
-        "classpath:spring-web.xml",
-        "classpath:spring-ds.xml",
-        "classpath:spring-persistence.xml"})
-public abstract class AbstractTestWeb /*extends AbstractTestConfig */{
+@ContextConfiguration(locations = {"classpath:spring-web.xml", "classpath:spring-persistence.xml", "classpath:spring-test-ds.xml"})
+public abstract class AbstractTestWeb /*extends AbstractTestConfig */ {
     public static final MediaType APPLICATION_JSON_UTF8 = MediaType.parseMediaType("application/json;charset=UTF-8");
 //            new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
 
