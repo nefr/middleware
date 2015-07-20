@@ -1,7 +1,7 @@
 package com.setplex.middleware.service;
 
 
-import com.setplex.middleware.utils.PasswordHelper;
+import com.setplex.middleware.util.PasswordHelper;
 import org.junit.Assert;
 import org.junit.Test;
 

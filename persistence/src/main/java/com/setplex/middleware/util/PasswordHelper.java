@@ -1,4 +1,4 @@
-package com.setplex.middleware.utils;
+package com.setplex.middleware.util;
 
 import org.apache.commons.codec.binary.Base64;
 

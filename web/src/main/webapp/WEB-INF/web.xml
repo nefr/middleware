@@ -7,7 +7,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath*:spring-*.xml
+            classpath:spring-ds.xml
+            classpath:spring-persistence.xml
         </param-value>
     </context-param>
 
@@ -18,6 +19,10 @@
     <servlet>
         <servlet-name>spring</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-web.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     
