@@ -20,18 +20,18 @@ public class ChannelCtrl {
     @Autowired
     TVService service;
 
-    @RequestMapping(value = "/channels", method = RequestMethod.GET)
-    public List<ChannelDTO> getChannels() {
-        return service.getChannels();
-    }
-
-    @RequestMapping(value = "/{pId}/channels", method = RequestMethod.GET)
-    public List<ChannelDTO> getChannelsByPackage(@PathVariable int pId) {
-        return service.getChannelsByPackage(pId);
-    }
-
-    @RequestMapping(value = "/{pId}/channels/{cId}", method = RequestMethod.GET)
-    public ChannelDTO getChannel(@PathVariable int pId, @PathVariable int cId) {
-        return service.getChannel(cId);
-    }
+//    @RequestMapping(value = "/channels", method = RequestMethod.GET)
+//    public List<ChannelDTO> getChannels() {
+//        return service.getChannels();
+//    }
+//
+//    @RequestMapping(value = "/{pId}/channels", method = RequestMethod.GET)
+//    public List<ChannelDTO> getChannelsByPackage(@PathVariable int pId) {
+//        return service.getChannelsByPackage(pId);
+//    }
+//
+//    @RequestMapping(value = "/{pId}/channels/{cId}", method = RequestMethod.GET)
+//    public ChannelDTO getChannel(@PathVariable int pId, @PathVariable int cId) {
+//        return service.getChannel(cId);
+//    }
 }

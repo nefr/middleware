@@ -6,12 +6,12 @@
     <p>Packages list</p>
     <div ng-hide="packages.length">No packages were found</div>
     <accordion close-others="false"  class="row">
-        <accordion-group class="col-md-12" ng-repeat="pk in packages" heading="{{pk.name}}">
+        <accordion-group class="col-md-12" ng-repeat="pk in packages track by pk.id" heading="{{pk.name}}">
             <div class="col-md-12">Channels: </div>
             <table class="table table-striped">
                 <tbody>
-                <tr ng-repeat="ch in pk.channels track by ch.channelId">
-                    <td class="col-md-2">{{ch.channelId}}</td>
+                <tr ng-repeat="ch in pk.channels track by ch.id">
+                    <td class="col-md-2">{{ch.id}}</td>
                     <td class="col-md-4">{{ch.name}}</td>
                     <td class="col-md-1">{{ch.language}}</td>
                     <td class="col-md-2">{{ch.packageId}}</td>
