@@ -20,6 +20,7 @@
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <!--<prop key="hibernate.hbm2ddl.import_files">path to data.sql</prop>-->
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
@@ -36,7 +37,7 @@
 
     <jpa:repositories base-package="com.setplex.middleware.repository" />
 
-
+    <!--<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>-->
 
     <!--<bean class="org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration"/>-->
     <!--<bean id="config" class="org.springframework.data.rest.core.config.RepositoryRestConfiguration">-->

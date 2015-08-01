@@ -1,8 +1,8 @@
 package com.setplex.middleware.web;
 
 import com.setplex.middleware.AbstractTestWeb;
-import com.setplex.middleware.domain.*;
 import com.setplex.middleware.domain.Package;
+import com.setplex.middleware.repository.UserRepo;
 import com.setplex.middleware.service.TVService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -21,6 +22,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PackageWebTest extends AbstractTestWeb {
     @Autowired
     TVService service;
+
+    @Autowired
+    UserRepo userRepo;
+
+    @Test
+//    @Sql(scripts = "classpath:db/data.sql")
+    public void testUser() {
+        assertEquals("admin", userRepo.findByName("admin").get(0).getName());
+    }
 
     @Test
     public void testCreate() throws Exception {
