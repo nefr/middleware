@@ -1,14 +1,10 @@
 package com.setplex.middleware.service;
 
+import com.setplex.middleware.domain.Package;
 import com.setplex.middleware.repository.ChannelRepo;
 import com.setplex.middleware.repository.PackageRepo;
-import  com.setplex.middleware.domain.Package;
-import com.setplex.middleware.util.IdUtil;
-import com.setplex.middleware.model.ChannelDTO;
-import com.setplex.middleware.model.PackageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -47,7 +43,7 @@ public class TVService {
 //    }
 
     public List<Package> getPackagesWithChannels() {
-       return packageRepo.findAll();
+       return packageRepo.findAllWithDeps();
     }
 
     public void createPackage(Package pk) {
