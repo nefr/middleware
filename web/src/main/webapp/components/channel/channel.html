@@ -1,18 +1,67 @@
-<ul class="menu">
-    <li><a href="#/package">Packages</a></li>
-    <li><a href="#/channel">Channels</a></li>
-</ul>
-<div class="col-md-10 col-md-offset-1">
-    <p>Channels list.</p>
-    <div ng-hide="channels.length">No channels were found</div>
-    <table class="table table-striped">
-        <tbody>
-        <tr ng-repeat="ch in channels track by ch.channelId">
-            <td class="col-md-2">{{ch.channelId}}</td>
-            <td class="col-md-4">{{ch.name}}</td>
-            <td class="col-md-1">{{ch.language}}</td>
-            <td class="col-md-2">{{ch.packageId}}</td>
-        </tr>
-        </tbody>
-    </table>
+<!-- start: application sidebar (left) -->
+<aside data-ng-include src="'components/common/sidebar-left.html'" class="app-sidebar sidebar-left bdr-r-w-0"></aside>
+<!--/ end: application sidebar (left) -->
+<!-- start: application header -->
+<div data-ng-include src="'components/common/sidebar-header.html'" id="app-header" class="navbar"></div>
+<!-- end: application header -->
+<!-- start: application content -->
+<div id="app-content" class="clearfix " data-ng-style="{'min-height':+core.screen.height+'px'}">
+<!--<div class="col-md-3 col-md-offset-1 content-body slide-down">-->
+
+    <!-- start: page header -->
+    <div class="page-header">
+        <div class="box-layout">
+            <div class="col-sm-6 va-m">
+            </div>
+        </div>
+    </div>
+    <div class="page-header">
+        <div class="box-layout">
+            <div class="col-sm-6 va-m">
+                <h3>Channels list</h3>
+            </div>
+        </div>
+    </div>
+    <!--/ end: page header -->
+
+    <!-- start: container fluid -->
+    <div class="container-fluid pt-md">
+        <!-- start: row -->
+        <div class="row top10">
+            <div class="col-md-12">
+                <!-- start: panel -->
+                <div class="panel panel-default">
+                    <!--<div class="panel-heading">-->
+                        <!--<div class="panel-title">User Lists</div>-->
+                    <!--</div>-->
+                    <!-- start: table responsive -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Language</th>
+                                <th>Package Id</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="ch in channels track by ch.channelId">
+                                <td>{{ch.channelId}}</td>
+                                <td>{{ch.name}}</td>
+                                <td>{{ch.language}}</td>
+                                <td>{{ch.packageId}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--/ end: table responsive -->
+                </div>
+            </div>
+        </div>
+        <!--/ end: row -->
+    </div>
+    <!--/ end: container fluid -->
+<!--</div>-->
 </div>
+<!--/ end: application content -->

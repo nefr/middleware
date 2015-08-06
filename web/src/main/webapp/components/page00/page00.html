@@ -1,0 +1,89 @@
+<!-- start: application sidebar (left) -->
+<aside data-ng-include src="'components/common/sidebar-left.html'" class="app-sidebar sidebar-left bdr-r-w-0"></aside>
+<!--/ end: application sidebar (left) -->
+<!-- start: application header -->
+<div data-ng-include src="'components/common/sidebar-header.html'" id="app-header" class="navbar"></div>
+<!-- end: application header -->
+<!-- start: application content -->
+<div id="app-content" class="clearfix slide-down" data-ng-style="{'min-height':+core.screen.height+'px'}">
+    <!--<div class="col-md-3 col-md-offset-1 content-body slide-down">-->
+
+    <!-- start: page header -->
+    <div class="page-header">
+        <div class="box-layout">
+            <div class="col-sm-6 va-m">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header col-md-12">
+        <button class="btn btn-default" type="button">
+            Add subscriber
+        </button>
+        <button class="btn btn-default" type="button">
+            Add network
+        </button>
+        <div class="btn-group" dropdown is-open="false">
+            <button type="button" class="btn btn-default btn-default dropdown-toggle">Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <button class="btn btn-default pull-right left7" type="button">
+            Find subscriber
+        </button>
+        <input class="col-md-1 pull-right" type="text"/>
+    </div>
+
+
+    <accordion close-others="false" class="col-md-12 top10">
+        <accordion-group heading="TVALB" is-open="true" is-disabled="false">
+            <div class="col-md-6">
+                <button class="btn btn-default" type="button">
+                    Edit
+                </button>
+                <button class="btn btn-default" type="button">
+                    Add subscruber
+                </button>
+                <button class="btn btn-default" type="button">
+                    Devices
+                </button>
+                <button class="btn btn-default" type="button">
+                    Send
+                </button>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Issues</th>
+                            <th>Online</th>
+                            <th>Registered</th>
+                            <th>Last access</th>
+                            <th>Enabled</th>
+                            <th>Expires</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--<tr ng-repeat="ch in channels track by ch.channelId">-->
+                        <!--<td>{{ch.channelId}}</td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </accordion-group>
+        <div class="col-md-12 top7">
+            65533 subscribers
+        </div>
+    </accordion>
+</div>

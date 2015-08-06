@@ -1,23 +1,54 @@
-<ul class="menu">
-    <li><a href="#/package">Packages</a></li>
-    <li><a href="#/channel">Channels</a></li>
-</ul>
-<div class="col-md-10 col-md-offset-1">
-    <p>Packages list</p>
+<!-- start: application sidebar (left) -->
+<aside data-ng-include src="'components/common/sidebar-left.html'" class="app-sidebar sidebar-left bdr-r-w-0"></aside>
+<!--/ end: application sidebar (left) -->
+<!-- start: application header -->
+<div data-ng-include src="'components/common/sidebar-header.html'" id="app-header" class="navbar"></div>
+<!-- end: application header -->
+<!-- start: application content -->
+<div id="app-content" class="clearfix " data-ng-style="{'min-height':+core.screen.height+'px'}">
+    <!--<div class="col-md-3 col-md-offset-1 content-body slide-down">-->
+    <div class="page-header">
+        <div class="box-layout">
+            <div class="col-sm-6 va-m">
+                <h1></h1>
+            </div>
+        </div>
+    </div>
+
+        <div class="page-header">
+            <div class="box-layout">
+                <div class="col-sm-6 va-m">
+                    <h3> Packages list</h3>
+                </div>
+            </div>
+        </div>
     <div ng-hide="packages.length">No packages were found</div>
-    <accordion close-others="false"  class="row">
-        <accordion-group class="col-md-12" ng-repeat="pk in packages track by pk.id" heading="{{pk.name}}">
-            <div class="col-md-12">Channels: </div>
-            <table class="table table-striped">
-                <tbody>
-                <tr ng-repeat="ch in pk.channels track by ch.id">
-                    <td class="col-md-2">{{ch.id}}</td>
-                    <td class="col-md-4">{{ch.name}}</td>
-                    <td class="col-md-1">{{ch.language}}</td>
-                    <td class="col-md-2">{{ch.packageId}}</td>
-                </tr>
-                </tbody>
-            </table>
+    <accordion close-others="false"  class="col-md-12 top10">
+        <accordion-group ng-repeat="pk in packages" heading="{{pk.name}}">
+            <div class="panel-heading">
+            <div class="panel-title">Channels:</div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Language</th>
+                        <th>Package Id</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="ch in pk.channels track by ch.channelId">
+                        <td>{{ch.channelId}}</td>
+                        <td>{{ch.name}}</td>
+                        <td>{{ch.language}}</td>
+                        <td>{{ch.packageId}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </accordion-group>
     </accordion>
+</div>
 </div>
